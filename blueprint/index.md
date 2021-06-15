@@ -108,7 +108,7 @@ To illustrate caching, the following scenario shows how to implement the ["Get O
 
 The "Get On Queue Agent Counts" data action checks if there are any idle agents on queue. This data action has a single input, the queue ID. The data action outputs the number of agents in each routing status.
 
-![Get On Queue Agent Counts action in an Architect flow](get_on_agent_counts_flow.png)
+![Get On Queue Agent Counts action in an Architect flow](images/get_on_agent_counts_flow.png)
 
 The goal of the cache is to avoid excessive requests with the same parameters to the action endpoint. To accomplish this we need:
 
@@ -122,7 +122,7 @@ There are no rate limits imposed when reading data from a data table. However, w
 
 Given this service expectation, the [data tables](https://help.mypurecloud.com/articles/work-with-data-tables/) feature in Genesys Cloud works well as the backing store for the cache. The cache consists of a single data table, with the key column containing the queue ID as the unique identifier, a second column containing the cache update time stamp, and a third column containing the cached value (a Boolean value indicating if any agents are on queue and idle).
 
-![Data table with cached data present](data_table_with_cache_data_present.png)
+![Data table with cached data present](images/data_table_with_cache_data_present.png)
 
 In the call flow, before we call the data action, we perform a data table lookup to retrieve the cache data that matches the data action input:
 - If _no_ result is found, we set a lookup result variable that indicates that we need to populate the cache with data.
@@ -132,11 +132,11 @@ These variables will also be used later in the flow.
 
 Next we compare the cache timestamp variable with the current DateTime to see if the cache is more than 5 minutes old. Then we set the lookup result variable accordingly.
 
-![Data table lookup logic in example caching flow](data_table_lookup.png)
+![Data table lookup logic in example caching flow](images/data_table_lookup.png)
 
 If the value of the lookup result variable indicates that we need to execute the data action, we execute it, parse the results, and set the appropriate variables (these are the same variables set by the data table lookup). Then, depending on the lookup result, we use data actions to either update the cache entry or insert a new entry in the data table.
 
-![Data action logic in example caching flow](data_action_logic.png)
+![Data action logic in example caching flow](images/data_action_logic.png)
 
 We now have a call flow that uses cached data instead of calling a data action whenever possible, and that automatically updates the cached data when it is more than 5 minutes old.
 
@@ -152,12 +152,12 @@ After we publish this flow, we are ready to implement it. The following sections
 6. Add a custom field called `Updated` that holds the DateTime of the record.
 7. Add a custom field called `AgentsIdle` that indicates whether or not there are idle agents.
 
-![Data table configuration parameters](data_table_configuration_parameters.png)
+![Data table configuration parameters](images/data_table_configuration_parameters.png)
 
 8. Save the data table.
 9. Select the new empty data table and copy the data table's ID from the URL in the browser. We will need this ID later when we add data actions to update the cache.
 
-![Browser address bar with data table ID highlighted](browser_address_bar.png)
+![Browser address bar with data table ID highlighted](images/browser_address_bar.png)
 
 ### Deploy the data actions and flows
 
@@ -177,7 +177,7 @@ The following sections provide step-by-step instructions on how to complete each
 5. Navigate to _Admin > Integrations > Actions_ and import all 3 data actions.
 6. For the _Insert_ and _Update IVR Cache Entry_ actions, update the request URL with the data table ID you noted in the previous section.
 
-![Data action configuration with data table ID highlighted](data_action_configuration_with_data_table.png)
+![Data action configuration with data table ID highlighted](images/data_action_configuration_with_data_table.png)
 
 7. Save and publish the data actions.
 
@@ -190,7 +190,7 @@ The following sections provide step-by-step instructions on how to complete each
 6. Update the Data Table Lookup step to reference the table you created.
 7. Update each Call Data Action step to reference the appropriate action that you imported in the previous section.
 
-![Architect interface with example flow imported](architect_interface_flow.png)
+![Architect interface with example flow imported](images/architect_interface_flow.png)
 
 #### Publish the example flow using Archy
 1. [Download the example flow.](CacheExampleFlow.yaml)
