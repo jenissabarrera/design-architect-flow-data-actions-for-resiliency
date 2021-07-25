@@ -171,9 +171,9 @@ The following sections provide step-by-step instructions on how to complete each
 
 #### Import the data actions
 1. Configure the [Genesys Cloud Data Actions integration](https://help.mypurecloud.com/articles/about-genesys-cloud-data-actions-integration/) if it is not already configured.
-2. [Download the "Insert IVR Cache Entry" data action template](Insert-IVR-Cache-Entry.json).
-3. [Download the "Update IVR Cache Entry" data action template](Update-IVR-Cache-Entry.json).
-4. [Download the "Get On Queue Agent Counts" data action template](Get-On-Queue-Agent-Counts.json).
+2. [Download the "Insert IVR Cache Entry" data action template](src/Insert-IVR-Cache-Entry.json).
+3. [Download the "Update IVR Cache Entry" data action template](src/Update-IVR-Cache-Entry.json).
+4. [Download the "Get On Queue Agent Counts" data action template](src/Get-On-Queue-Agent-Counts.json).
 5. Navigate to _Admin > Integrations > Actions_ and import all 3 data actions.
 6. For the _Insert_ and _Update IVR Cache Entry_ actions, update the request URL with the data table ID you noted in the previous section.
 
