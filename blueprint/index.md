@@ -182,7 +182,7 @@ The following sections provide step-by-step instructions on how to complete each
 7. Save and publish the data actions.
 
 ### Import the example flow using Architect
-1. [Download the example flow.](https://github.com/jenissabarrera/design-architect-flow-data-actions-for-resiliency/blob/main/CacheExample.i3InboundFlow)
+1. [Download the example flow.](/src/CacheExample.i3InboundFlow)
 2. In Architect, from the Flows menu, click **Inbound Call**.
 3. Add a new flow and give it a name that is meaningful to you.
 4. When the editor opens, import the example flow.
@@ -193,7 +193,7 @@ The following sections provide step-by-step instructions on how to complete each
 ![Architect interface with example flow imported](images/architect_interface_flow.png)
 
 #### Publish the example flow using Archy
-1. [Download the example flow.](https://github.com/jenissabarrera/design-architect-flow-data-actions-for-resiliency/blob/main/CacheExampleFlow.yaml)
+1. [Download the example flow.](/src/CacheExampleFlow.yaml)
 2. [Download Archy](/devapps/archy/)
 2. Open the file and adjust the object references to match your environment if necessary.
 3. Run `archy publish --file /path/to/CacheExampleFlow.yaml`.
