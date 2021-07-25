@@ -200,11 +200,11 @@ The following sections provide step-by-step instructions on how to complete each
 
 ## Additional resources
 
-1. [Caching example - Architect call flow](CacheExample.i3InboundFlow)
-2. [Caching example - Archy call flow](CacheExampleFlow.yaml)
-3. ["Insert IVR Cache Entry" data action template](Insert-IVR-Cache-Entry.json)
-4. ["Update IVR Cache Entry" data action template](Update-IVR-Cache-Entry.json)
-5. ["Get On Queue Agent Counts" data action template](Get-On-Queue-Agent-Counts.json)
+1. [Caching example - Architect call flow](src/CacheExample.i3InboundFlow)
+2. [Caching example - Archy call flow](src/CacheExampleFlow.yaml)
+3. ["Insert IVR Cache Entry" data action template](src/Insert-IVR-Cache-Entry.json)
+4. ["Update IVR Cache Entry" data action template](src/Update-IVR-Cache-Entry.json)
+5. ["Get On Queue Agent Counts" data action template](src/Get-On-Queue-Agent-Counts.json)
 6. [Archy, the Genesys Cloud Call Flow CLI](/devapps/archy/)
 7. [More Genesys Cloud Data Actions on the AppFoundry](https://appfoundry.mypurecloud.com/filter/genesyscloud/listing/13074443-4ffc-46b6-82c7-c3f4af51861f)
 8. [Handling rate limits on Genesys Cloud platform API requests](/api/rest/rate_limits.html)
